@@ -1,3 +1,4 @@
 Flask
-gevent
-gevent-websocket
+openai
+youtube_transcript_api
+Frozen-Flask
