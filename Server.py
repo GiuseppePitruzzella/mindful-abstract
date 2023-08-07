@@ -22,8 +22,4 @@ class Server:
         
         @self.app.route('/getAbstract', methods=['POST'])
         def getAbstract():
-            return render_template('summarium.html', data=json.dumps(self.GPT.getAnswer(self.Video.getTranscription(link = request.form['link']))))
-        
-        
-
- 
+            return render_template('summarium.html', data=json.dumps(self.GPT.getAnswer(self.Video.getTranscription(link = request.form['input_data']))))

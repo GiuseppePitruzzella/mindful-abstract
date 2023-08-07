@@ -16,7 +16,6 @@ class GPT:
         if answer: self.messages.append({"role": "assistant", "content": answer})
 
     def getAnswer(self, question):
-        return "OK"
         print("[INFO] Question : \n\t" + question)
         self.saveMessage(question=question)
         self.completion = openai.ChatCompletion.create(

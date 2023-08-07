@@ -48,33 +48,21 @@
 <body class="w-full h-screen bg-gradient-to-r from-blue-200 via-orange-500 to-yellow-400 backgroundAnimate">
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">      
-            <a href="/getIndex"><h2 class="text-center text-6xl font-['DT_Getai_Grotesk_Display'] text-white drop-shadow-md leading-[0.8] tracking-tight text-gray-900">Mindful<br> Abstracts</h2></a>
+            <a href="/"><h2 class="text-center text-6xl font-['DT_Getai_Grotesk_Display'] text-white drop-shadow-md leading-[0.8] tracking-tight text-gray-900">Mindful<br> Abstracts</h2></a>
         </div>
     <!-- TODO: Al click di Abstract segue una POST definita nel file script.js, il quale deve essere condiviso da entrambi i file HTML -->
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm drop-shadow-md">
             <form class="space-y-6" action="/getAbstract" method="POST">
                 <div>
                     <div class="mt-[-2px]">
-                        <div id="abstractBox" class="boxAnimate bg-white px-4 block w-full rounded-[16px] border-0 py-4 px-4 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6">
-                            <div class="chunkAnimate">
-                                <!--
-                                <h3 class="font-['DT_Getai_Grotesk_Display'] text-xl">Riepilogo</h3>
-                                <p>Alberto Fontana, conosciuto come Naska, è diventato pilota automobilistico nonostante le difficoltà economiche. Ha trovato una soluzione creativa per avvicinarsi al suo sogno, iniziando a giocare a videogiochi di corse automobilistiche.</p><br>
-                                <h3 class="font-['DT_Getai_Grotesk_Display'] text-xl">Highlights</h3>
-                                <p>
-                                    🏎️ Alberto Fontana aveva il sogno di diventare pilota automobilistico, ma mancavano i soldi necessari per iniziare.<br>
-                                    🎮 Ha iniziato a giocare a videogiochi di corse automobilistiche per avvicinarsi al suo sogno.<br>
-                                    🎭 Ha seguito un corso di teatro e iniziato a creare contenuti video su YouTube, ottenendo una grande visibilità.<br>
-                                    👀 Ha imparato l'importanza di guardarsi da fuori per capire come gli altri lo vedevano e migliorare se stesso.<br>
-                                </p>
-                                -->
-                            </div>
+                        <div id="sum_value" class="boxAnimate bg-white px-4 block w-full rounded-[16px] border-0 py-4 px-4 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                            {{ data }}
                         </div>
                     </div>
                 </div>
         
                 <div>
-                    <div type="submit" class="flex w-full rounded-[16px] justify-center bg-pink-5000 px-3 py-1.5 text-[11px] font-semibold leading-6 text-white shadow-md uppercase opacity-0">Abstract</div>
+                    <div class="flex w-full rounded-[16px] justify-center bg-pink-5000 px-3 py-1.5 text-[11px] font-semibold leading-6 text-white shadow-md uppercase opacity-0">Abstract</div>
                 </div>
             </form>
     
@@ -84,7 +72,8 @@
             </p>
         </div>
     </div>
-    <script>
+    <script src="/static/js/req.js"></script>
+    <!-- <script>
         // Definisci il testo che vuoi stampare chunk by chunk
         const textToAnimate = `                           
             <h3 class="font-['DT_Getai_Grotesk_Display'] text-xl">Riepilogo</h3>
@@ -113,6 +102,6 @@
         }
 
         animateTextChunkByChunk();
-    </script>
+    </script> -->
 </body>
 </html>

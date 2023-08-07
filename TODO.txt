@@ -1,0 +1,3 @@
+- Formattazione del testo ricevuto da GPT.getAnswer()
+- Set dell'altezza del box container della risposta ricevuta dopo la richiesta POST
+- Rinominare tutte le variabili con il mio standard
