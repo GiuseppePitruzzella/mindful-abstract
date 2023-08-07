@@ -20,13 +20,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/GiuseppePitruzzella/mindful-abstract">
-    <img src="images/*.png" alt="Logo" width="250" height="250">
+    <img src="images/logo.png" alt="Logo" width="250" height="250">
   </a>
 
 <h3 align="center">Mindful Abstract</h3>
 
   <p align="center">
-Repository contains the project for my BsC Degree. It is based on the implementation of a gateway for the Pepper robot, which can establish a point of contact between the user and the robot itself. In this way, the user can interface with the robot, order movements and/or information, or more generally request tasks. The latter are carried out completely autonomously by the robot.
+ Mindful Abstract is a platform that turns YouTube videos into concise summaries. Application comprehends context, extracts vital details, and crafts a coherent summary, eliminating the need to watch the entire video.
     <br />
     <br />
     <br />
