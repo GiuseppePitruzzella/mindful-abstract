@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/GiuseppePitruzzella/mindful-abstract">
-    <img src="images/*.png" alt="Logo" width="250" height="250">
+    <img src="images/logo.png" alt="Logo" width="250" height="250">
   </a>
 
 <h3 align="center">Mindful Abstract</h3>
