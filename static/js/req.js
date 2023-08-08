@@ -22,6 +22,27 @@ document.addEventListener('DOMContentLoaded', function() {
     //     .catch(error => console.error('[ERROR] Request Error :', error));
     // }
 
+    function animateTextChunkByChunk(textToAnimate) {
+        const chunkContainer = document.getElementById('chunkAnimate');
+        const chunks = textToAnimate.split(' ');
+    
+        let currentChunkIndex = 0;
+        let animatedText = '';
+        let delay = 50; // Chunk-by-chunk animation speed
+    
+        function animateNextChunk() {
+            if (currentChunkIndex < chunks.length) {
+                animatedText += chunks[currentChunkIndex] + ' ';
+                chunkContainer.innerHTML = animatedText;
+                currentChunkIndex++;
+    
+                setTimeout(animateNextChunk, delay);
+            }
+        }
+    
+        animateNextChunk();
+    }
+
     const abstractForm = document.getElementById('abstractForm');
 
     abstractForm.addEventListener('submit', function(event) {
@@ -44,10 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => { 
             document.open(); 
             document.write(data); 
-            document.close()
+            document.close();
 
-            // parsedHTML = new DOMParser().parseFromString(document.getElementById("sum_value").innerHTML, "text/html")
-            console.log(document.getElementById("sum_value").getAttribute("data-data"))
+            const sumValue = document.getElementById('sum_value');
+            const dataValue = sumValue.innerHTML; // Ottieni il valore direttamente dal contenuto
+            console.log(dataValue)
+            animateTextChunkByChunk(dataValue);
         })
         .catch(error => console.error('[ERROR] Request Error :', error));
     }
