@@ -1,6 +1,9 @@
 # Config File
 config.py
 
+# TODO
+TODO.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

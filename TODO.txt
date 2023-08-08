@@ -1,3 +1,5 @@
 - Formattazione del testo ricevuto da GPT.getAnswer()
 - Set dell'altezza del box container della risposta ricevuta dopo la richiesta POST
 - Rinominare tutte le variabili con il mio standard
+- Refactoring summarium.html
+- Display as Index.html -> API.html, then setup postAPI() in script.js e setAPI in Server.py
