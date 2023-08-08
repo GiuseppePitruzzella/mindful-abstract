@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 import json
 from video_handler import *
 import json
+from emoji import UNICODE_EMOJI
+import regex
 from GPT import *
 
 class Server:
@@ -17,24 +19,27 @@ class Server:
     def startServer(self):
         self.app.run(debug = True, host = '0.0.0.0', port=10001)
 
-    def addTag(self, data, target, openTag, closeTag = None):
+    def addTag(self, data, target, openTag = None, closeTag = None):
         index = data.find(target)
 
-        data = data[:index] + openTag + data[index:]
-
-        if (closeTag):
-            index += len(target) + len(openTag)
+        if openTag:
+            data = data[:index] + openTag + data[index:]
+        if closeTag:
+            if openTag: 
+                index += len(target) + len(openTag)
+            else: index += len(target)
             data = data[:index] + closeTag + data[index:]
 
         return data
 
     def formatData(self, data):
-        data = self.addTag(data = data, target = 'Summary:', openTag = '<h2>', closeTag = '</h2><br>')
-        data = self.addTag(data = data, target = 'Points:', openTag = '<br><h2>', closeTag = '</h2><br>')
+        data = self.addTag(data = data, target = 'Summary:', openTag = '<h2>', closeTag = '</h2><p class=text-xs>')
+        data = self.addTag(data = data, target = 'Points:', openTag = '</p><br><h2>', closeTag = '</h2><p class=text-xs>')
+        data = self.addTag(data = data, target = data.split()[-1], closeTag = '</p>')
 
-        print(data)
+        emoji = ''.join(c for c in data if c in UNICODE_EMOJI['en'])
+        for e in emoji[1:]: data = self.addTag(data = data, target = e, openTag = '<br>')
 
-        index = data.find('Points')
         return data
     
     def defineRoutes(self):
