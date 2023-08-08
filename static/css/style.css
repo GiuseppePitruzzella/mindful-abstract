@@ -1,5 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/dt-getai-grotesk-display');
-      
+     
+h2 {
+  font-family: 'DT Getai Grotesk Display';
+}
+
 .background-animate {
   background-size: 400%;
 
