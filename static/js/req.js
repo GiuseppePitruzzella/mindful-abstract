@@ -31,12 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const inputField = document.getElementById('inputField');
         const inputData = inputField.value;
 
+        // const apiField = document.getElementById('apiField');
+        // const apiData = apiField.value;
+
+        // console.log(inputData + " " + apiData)
+
         fetch('/getAbstract', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json'
             },
-            body: 'input_data=' + inputData
+            // body: 'input_data=' + inputData
+            // body: JSON.stringify({ input_data: inputData, api_data: apiData })
+            body: JSON.stringify({ input_data: inputData })
         })
         .then(response => response.text())
         .then(data => { 

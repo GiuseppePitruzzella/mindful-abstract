@@ -4,7 +4,7 @@ import openai
 import config
 import json
 
-class GPT:
+class GPT:    
     def __init__(self, API = None):
         print("[INFO] Init GPT API...")
 
@@ -14,21 +14,21 @@ class GPT:
         else: openai.api_key = config.CHATGPT_API_KEY
 
         self.model_id = "gpt-3.5-turbo"
-        self.messages = config.HISTORY
-
-    def saveMessage(self, question = None, answer = None):
-        if question: self.messages.append({"role": "user", "content": question})
-        if answer: self.messages.append({"role": "assistant", "content": answer})
+        self.messages = []
 
     def getAnswer(self, question):
-        print("[INFO] Question : \n\t" + question)
-        self.saveMessage(question=question)
+        print("[INFO] Question : \n" + config.TASK + '\n\n' + question)
+        # Append question into messages list
+        self.messages.append({"role": "user", "content": config.TASK + '\n\n' + question})
+        # Generate Response from GPT
         self.completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=self.messages,
         )
-        print("[INFO] Answer : \n\t" + self.completion.choices[0].message.content)
+        # Print Response
+        print("[INFO] Answer : \n\n" + self.completion.choices[0].message.content)
         answer = self.completion.choices[0].message.content
-        self.saveMessage(answer=answer)
+        # Erase context to free up space needed for new questions
+        self.messages = []
         return answer
 

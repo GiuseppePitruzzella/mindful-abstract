@@ -20,7 +20,7 @@ class Video:
                 text_list.append(i['text'])
             transcription = ' '.join(text_list)
 
-            print("[INFO] Transcription : " + transcription)
+            # print("[INFO] Transcription : " + transcription)
 
             return transcription
         except TypeError:

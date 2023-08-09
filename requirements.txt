@@ -4,3 +4,4 @@ youtube_transcript_api
 Frozen-Flask
 emoji==1.7
 regex
+elsa
