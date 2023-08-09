@@ -5,9 +5,14 @@ import config
 import json
 
 class GPT:
-    def __init__(self):
+    def __init__(self, API = None):
         print("[INFO] Init GPT API...")
-        openai.api_key = config.CHATGPT_API_KEY
+
+        print(API)
+
+        if (API): openai.api_key = API
+        else: openai.api_key = config.CHATGPT_API_KEY
+
         self.model_id = "gpt-3.5-turbo"
         self.messages = config.HISTORY
 
