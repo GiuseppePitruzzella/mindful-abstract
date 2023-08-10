@@ -9,7 +9,8 @@ from GPT import *
 class Server:
     def __init__(self):
         self.app = Flask(__name__)
-        self.GPT = GPT()
+        # self.GPT = GPT()
+        self.API = self.GPT = None
         self.defineRoutes()
         self.Video = Video()
         self.startServer()
@@ -50,6 +51,17 @@ class Server:
         def getIndex():
             return render_template('index.html')
         
+        @self.app.route('/setURL')
+        def setURL():
+            return render_template('url.html')
+        
+        @self.app.route('/setAPI', methods=['POST'])
+        def setAPI():
+            request_data = request.get_json()
+            self.API = request_data.get('input_data')
+            self.GPT = GPT(self.API)
+            return render_template('url.html')
+        
         @self.app.route('/getAbstract', methods=['POST'])
         def getAbstract():
             request_data = request.get_json()
@@ -60,7 +72,7 @@ class Server:
 
             data = self.formatData(response)
 
-            return render_template('summarium.html', data = json.dumps(data))
+            return render_template('summarium.html', data = data)
         
             return render_template('summarium.html', data=json.dumps(
                 self.formatData(

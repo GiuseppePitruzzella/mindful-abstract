@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('/setAPI', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json'
             },
-            body: 'input_data=' + inputData
+            body: JSON.stringify({ input_data: inputData })
         })
         .then(response => response.text())
         .then(data => { 
