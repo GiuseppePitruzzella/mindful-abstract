@@ -41,21 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            // body: 'input_data=' + inputData
             // body: JSON.stringify({ input_data: inputData, api_data: apiData })
             body: JSON.stringify({ input_data: inputData })
         })
         .then(response => response.text())
-        .then(data => { 
-            document.open(); 
-            document.write(data); 
-            document.close();
-
-            const sumValue = document.getElementById('sum_value');
-            const dataValue = sumValue.innerHTML; // Ottieni il valore direttamente dal contenuto
-            console.log(dataValue)
-            animateTextChunkByChunk(dataValue);
-        })
+        .then(data => document.getElementById('mainContainer').innerHTML = data)
         .catch(error => console.error('[ERROR] Request Error :', error));
     }
 });
