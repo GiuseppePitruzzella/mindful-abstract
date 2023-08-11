@@ -39,7 +39,7 @@
 </div>
 
 #### Built With
-`Python`
+`Python 3.11.3`
 
 
 
@@ -47,30 +47,27 @@
 ## Getting Started
 
 ### Prerequisites
+To get started with Mindful Abstract, you'll need to install the required dependencies. You can do this by running the following command:
   ```sh
-  make build
+  pip install -r requirements.txt
   ```
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/UniCT-ARSLab/PepperGateway.git
+   git clone https://github.com/GiuseppePitruzzella/mindful-abstract.git
    ```
-2. Build Docker Image
+2. Run server
    ```sh
-   make build
-   ```
-3. Run container. Before run, make sure you have changed the volume path on the Makefile.
-   ```sh
-   make run
+   python3 main.py
    ```
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
+Mindful Abstract can be used to create concise summaries for YouTube videos, saving time and providing users with the essential information they need. To see more detailed examples and usage instructions, please refer to the Documentation.
 <!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources. -->
 
 _For more examples, please refer to the [Documentation](https://example.com)_
@@ -79,7 +76,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- CONTRIBUTING -->
 ## Contributing
-
+Contributions to Mindful Abstract are highly appreciated.
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
