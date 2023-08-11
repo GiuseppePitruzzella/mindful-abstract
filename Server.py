@@ -13,7 +13,6 @@ class Server:
         self.API = self.GPT = None
         self.defineRoutes()
         self.Video = Video()
-        self.startServer()
 
     def getApp(self):
         return self.app;
