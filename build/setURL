@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Mindful Abstracts</title>
+</head>
+<body class="w-full h-screen bg-gradient-to-r from-blue-200 via-orange-500 to-yellow-400 background-animate">
+    <div id="mainContainer" class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">      
+            <a href="/setURL"><h2 class="text-center text-6xl text-white drop-shadow-md leading-[0.8] tracking-tight text-gray-900">Mindful<br> Abstracts</h2></a>
+        </div>
+    
+        <div id="content" class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm drop-shadow-md">
+            <form id="abstractForm" class="space-y-6">
+                <div>
+                    <div class="mt-2">
+                        <input id="inputField" type="text" placeholder="URL" class="px-4 block w-full rounded-[16px] border-0 py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                    </div>
+                    <!-- <div class="mt-2">
+                        <input id="apiField" type="text" placeholder="API" class="px-4 block w-full rounded-[16px] border-0 py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                    </div> -->
+                </div>
+        
+                <div>
+                    <button type="submit" class="flex w-full rounded-[16px] justify-center bg-pink-5000 px-3 py-1.5 text-[11px] font-semibold leading-6 text-white shadow-md uppercase">Abstract</button>
+                </div>
+            </form>
+    
+            <p class="mt-10 text-center text-sm text-gray-100">
+                Want to learn more?
+                <a href="https://github.com/GiuseppePitruzzella/mindful-abstract" class="font-semibold leading-6 text-white">Check our Repository ❤️</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="/static//js/req.js"></script>
+</html>
